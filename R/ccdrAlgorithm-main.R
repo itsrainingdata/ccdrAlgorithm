@@ -471,7 +471,7 @@ ccdr_singleR <- function(cors,
     ### Check weights
     if(length(weights) != pp*pp) stop(sprintf("weights must have length p^2 = %d!", pp*pp))
     if(!is.numeric(weights)) stop("weights must be numeric!")
-    if(weights < -1 || weights > 1) stop("weights out of bounds!")
+    if(any(weights < -1 | weights > 1)) stop("weights out of bounds!")
 
     ### Check gamma
     if(!is.numeric(gamma)) stop("gamma must be numeric!")
